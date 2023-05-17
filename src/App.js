@@ -6,6 +6,7 @@ import CalculatorV03 from "./versions/Calculator.v.0.3";
 import CalculatorV04 from "./versions/Calculator.v.0.4";
 import CalculatorV05 from "./versions/Calculator.v.0.5";
 import CalculatorV06 from "./versions/Calculator.v.0.6";
+import CalculatorV07 from "./versions/Calculator.v.0.7";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello World React</p>
-        <CalculatorV06 />
+        <CalculatorV07 />
       </header>
     </div>
   );

@@ -29,7 +29,7 @@ const useKeyDown = (callback) => {
     const keyDownBinder = (event) => {
       callback(event);
     };
-    //  키보드 이벤트 리스너를 생성해주고, 거기에 handleKeyDown 펑션을 바인딩해준다.
+    //  키보드 이벤트 리스너를 생성해주고, 거기에 keyDownBinder 펑션을 바인딩해준다.
     document.addEventListener("keydown", keyDownBinder);
     //  클린업 펑션이다. 클린업 해주지 않으면 이벤트리스너가 누적된다.
     return () => {

@@ -117,7 +117,7 @@ const CalculatorV06 = () => {
 
   return (
     <div className="Calculator aparatFrame">
-      <h1>Calculator 0.6</h1>
+      <h1>Calculator 0.7</h1>
       <div className="statesContainer">
         <div className="wholeArithmetic">{state.wholeArithmetic}</div>
         <div className="numberToCalculate">{state.numberToCalculate}</div>
