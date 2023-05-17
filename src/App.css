@@ -1,0 +1,91 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+p {
+  white-space: pre-wrap;
+}
+.lineThrough {
+  text-decoration: line-through;
+}
+
+.statesContainer {
+  margin: 1rem auto;
+  width: 50vw;
+  display: grid;
+  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.wholePadContainer {
+  margin: 1rem auto;
+  width: 50vw;
+  display: grid;
+  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.operatorPad {
+  display: grid;
+  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+.numPad {
+  display: grid;
+  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.numPad button,
+.operatorPad button {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.updatedAnimated {
+  animation: updated 0.5s ease-in-out;
+}
+
+@keyframes updated {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
