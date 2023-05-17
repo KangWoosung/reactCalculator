@@ -11,6 +11,10 @@ import { useKeyDown } from "../hooks/useKeyDown.0.6.js";
     2023-05-17 11:51:41
     Key 입력 처리를 완료하였다.
     또하나의 활용도 높은 useKeyDown 커스텀 훅을 얻었다.
+
+    2023-05-18 04:30:05
+    키보드 입력 핸들링은 완성했고,
+    이제 괄호 연산 로직을 구현해보자.
 */
 
 const CalculatorV06 = () => {
