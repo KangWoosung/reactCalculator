@@ -1,7 +1,7 @@
 import React, { useState, useReducer, useEffect, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Numbtn from "../components/Numbtn.js";
-import initialState04 from "../initialState/calculator.0.4.js";
+import Numbtn07 from "../components/Numbtn.0.7.js";
+import initialState07 from "../initialState/calculator.0.7.js";
 import { useAnimate } from "../hooks/useAnimate.0.5.js";
 import { useKeyDown } from "../hooks/useKeyDown.0.6.js";
 
@@ -20,14 +20,19 @@ import { useKeyDown } from "../hooks/useKeyDown.0.6.js";
     일단, 1중 괄호에서 로직을 구현해낸 후, 다중 괄호로 확장해보자.
 
     1. 열린 괄호가 존재할 경우...
+       - closeParentheses-openParentheses > 0 ? parenthesOpen = true
+       - parenthesOpen 이면, 계산 대상 숫자를 parenthesesToCalculate 에 보관한다.
+       - parenthesOpen 이면, 이후 수식계산 결과를 parenthesesResult 에 보관한다.
 
 */
+function parenthesesClosed() {}
 
 const CalculatorV06 = () => {
   const numbers = ["(", ")", "", 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, ".", "="];
   const operators = ["+", "-", "*", "/", "clear"];
-  const [state, setState] = useState(initialState04);
+  const [state, setState] = useState(initialState07);
   const animateResult = useAnimate(state.resultState, 1000);
+  const { parenthesesOpen, parenthesesClosed } = state;
   console.log("state", state);
 
   //  2023-05-17 10:02:00
@@ -95,7 +100,7 @@ const CalculatorV06 = () => {
         prevState;
       //  clear 클릭과 Esc 예외처리..
       if (eventOperator === "clear" || eventOperator === "Escape") {
-        return initialState04;
+        return initialState07;
       }
       const calcResult = calculateResult(
         operator,
@@ -111,6 +116,14 @@ const CalculatorV06 = () => {
       };
     });
   };
+
+  //  parentheses 가 오픈 상태인지를 확인하고, 오픈 상태라면 클로즈 될 때까지,
+  //  입력되는 모든 숫자와 수식은 parentheses state 에서 관리된다.
+  if (parenthesesClosed) {
+    //  2023-05-18 18:30:12
+    //  해야할 일은 numClick() 과 같은데, 그 결과를 저장해야 할 state 는 parenthesesToCalculate 이다.
+    //  이 문제를 해결해야 이번 과제가 해결된다.
+  }
 
   //  keyDown 핸들링 커스텀 훅
   useKeyDown(handleKeyDown);
@@ -132,9 +145,13 @@ const CalculatorV06 = () => {
           {numbers.map((number) => {
             const uniqueId = uuidv4();
             return (
-              <Numbtn key={uniqueId} onClick={numClick}>
+              <Numbtn07
+                key={uniqueId}
+                onClick={numClick}
+                parenthesesUnclosed={state.parenthesesUnclosed}
+              >
                 {number}
-              </Numbtn>
+              </Numbtn07>
             );
           })}
         </div>
@@ -142,9 +159,9 @@ const CalculatorV06 = () => {
           {operators.map((operator) => {
             const uniqueId = uuidv4();
             return (
-              <Numbtn key={uniqueId} onClick={operatorClick}>
+              <Numbtn07 key={uniqueId} onClick={operatorClick}>
                 {operator}
-              </Numbtn>
+              </Numbtn07>
             );
           })}
         </div>
