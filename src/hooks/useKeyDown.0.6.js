@@ -8,8 +8,9 @@ keyUp 이 아닌 keyDown 을 쓰는 이유는,
 Usage:
 const handleKeyDown = (e) => {
   if (
-    (typeof Number(e.key) === "number" && !isNaN(Number(e.key))) ||
-    e.key === "Enter"
+      numbers.includes(e.key) ||
+      numbers.includes(Number(e.key)) ||
+      e.key === "Enter"
   ) {
     numClick(e);
   } else if (operators.includes(e.key) || e.key === "Escape") {

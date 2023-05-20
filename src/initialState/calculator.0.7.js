@@ -4,7 +4,7 @@ import React from "react";
     괄호 연산이 도입되므로, initialState 에 변경이 필요하다.
 */
 
-const initialState06 = {
+const initialState07 = {
   input: 0,
   operator: "+",
   wholeArithmetic: "",
@@ -15,7 +15,7 @@ const initialState06 = {
   parenthesesUnclosed: false,
   parenthesesArithmetic: "",
   parenthesesToCalculate: 0,
-  parenthesesResult: 0,
+  parenthesesCalcResult: 0,
 };
 
-export default initialState06;
+export default initialState07;
