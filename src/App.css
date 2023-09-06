@@ -1,91 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 .App {
   text-align: center;
+  background: url('') no-repeat bottom #001220;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form{
+  max-width:100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form  input{
+  max-width: 100%;
+}
+.btn {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  align-content: center;
+  background-color: black;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.btn div{
+  display:flex;
+  flex-direction: row;
+  max-width:100%;
+  margin: 0px 10px;
+}
+.btn div:last-child{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.btn .button-number {
+  padding: 8px 30px;
+  width: 22%;
+  margin: 3px;
   color: white;
 }
-
-p {
-  white-space: pre-wrap;
+.btn .button-reset{
+  width: 70%;
 }
-.lineThrough {
-  text-decoration: line-through;
-}
-
-.statesContainer {
-  margin: 1rem auto;
-  width: 50vw;
-  display: grid;
-  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.wholePadContainer {
-  margin: 1rem auto;
-  width: 50vw;
-  display: grid;
-  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.operatorPad {
-  display: grid;
-  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-}
-.numPad {
-  display: grid;
-  justify-content: end; /* 열 기준으로 오른쪽 정렬 */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-.numPad button,
-.operatorPad button {
-  width: 100%;
-  height: 3rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.updatedAnimated {
-  animation: updated 0.5s ease-in-out;
-}
-
-@keyframes updated {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+.btn .button-total{
+  width: 30%;
 }
