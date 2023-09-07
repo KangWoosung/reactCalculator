@@ -1,18 +1,18 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import "./styles.css";
-import Calculator from './components/Calculator.js'
+
 
 function App() {
   return (
-  <div className="App">
+  <>
 
     <div className="calculator">
       {/* output */}
       <div className="output">
-        <div className="last-operand"></div>
-        <div className="current-operand"></div>
-
+          <div className="last-operand">1562</div>
+          <div className="current-operand">1562</div>
+      </div>
         {/* Grid area */}
         <button className="span-two">AC</button>
         <button>DEL</button>
@@ -30,11 +30,10 @@ function App() {
         <button>9</button>
         <button>-</button>
         <button>.</button>
-        <button>0/button>
+        <button>0</button>
         <button className='span-two'>=</button>
-      </div>
     </div>
-  </div>
+  </>
    );
 }
 

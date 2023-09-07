@@ -1,46 +1,47 @@
-.container{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-  .form{
-    max-width:100%;
-  }
-  .form  input{
-    max-width: 100%;
-  }
-  .btn {
-    
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    background-color: black;
-    flex-wrap: wrap;
-    max-width: 100%;
-  }
-  .btn div{
-    display:flex;
-    flex-direction: row;
-    max-width:100%;
-    margin: 0px 10px;
-  }
-  .btn div:last-child{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-  }
-  .btn .button-number {
-    padding: 8px 30px;
-    width: 22%;
-    margin: 3px;
-    color: white;
-  }
-  .btn .button-reset{
-    width: 70%;
-  }
-  .btn .button-total{
-    width: 30%;
-  }
-  
+*. *::before, *::after{
+  box-sizing: border-box;
+}
+body{
+  margin: 0px;
+  background: orange;
+}
+.calculator{
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  justify-content: center;
+}
+.calculator > button{
+  font-size: 2.5rem; 
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .75);
+  outline: none;
+  border: 1px solid white;
+}
+.calculator > button:hover,
+.calculator > button:focus{
+  background-color: rgba(255, 255, 255, .9);
+}
+.span-two{
+  grid-column: span 2;
+}
+.output{
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .75);
+  display: flex;
+  justify-content: space-around;
+  align-items:flex-end ;
+  flex-direction: column; 
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.output .last-operand{
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+.output .current-operand{
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem; 
+}
