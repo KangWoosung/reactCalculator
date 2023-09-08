@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 *. *::before, *::after{
   box-sizing: border-box;
 }
@@ -19,12 +20,15 @@ body{
   outline: none;
   border: 1px solid white;
 }
-.calculator > button:hover,
-.calculator > button:focus{
+.calculator > button[title='']:hover{
   background-color: rgba(255, 255, 255, .9);
 }
 .span-two{
   grid-column: span 2;
+}
+.span-two[title='TOTAL']{
+  background-color: rgb(255, 0, 0, 1.0);
+  border: 1px red solid;
 }
 .output{
   grid-column: 1 / -1;
@@ -36,12 +40,10 @@ body{
   padding: .75rem;
   word-wrap: break-word;
   word-break: break-all;
+  font-family: 'Orbitron', sans-serif; 
 }
-.output .last-operand{
-  color: rgba(255, 255, 255, .75);
-  font-size: 1.5rem;
-}
-.output .current-operand{
+
+.output .input{
   color: rgb(255, 255, 255);
   font-size: 2.5rem; 
 }
